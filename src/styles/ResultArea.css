@@ -1,0 +1,5 @@
+.result-area-container {
+  background-color: var(--result-area-bg);
+
+  grid-area: 2 / 2 / 3 / 3;
+}
