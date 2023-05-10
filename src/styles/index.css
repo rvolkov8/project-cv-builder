@@ -18,9 +18,13 @@
   --black-font: #0c0c0d;
   --gray-font: #d5d8db;
   --dark-gray-font: #999ea7;
-  --gray-field: #f2f5fa;
+  --darker-gray-font: #64686e;
+  --gray-field: #ecf0f6;
+  --white: #fbfbfd;
   --blue: #277dff;
   --red: #fb8474;
+  --green: #07bea5;
+  --light-green: #f3fffd;
 }
 
 #root {

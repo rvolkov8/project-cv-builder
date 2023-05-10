@@ -1,0 +1,39 @@
+.edit-area-container {
+  background-color: var(--edit-area-bg);
+  grid-area: 2 / 1 / 3 / 2;
+
+  padding: 50px;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+}
+
+.main-prompt {
+  text-align: center;
+  color: var(--black-font);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.agreement {
+  text-align: center;
+  color: var(--darker-gray-font);
+  font-size: 0.8rem;
+  margin-bottom: 50px;
+}
+
+.continue-button {
+  padding: 10px 30px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--white);
+  background-color: var(--blue);
+  border-radius: 6px;
+  border: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
