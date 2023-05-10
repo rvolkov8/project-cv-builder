@@ -1,0 +1,17 @@
+.step-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  cursor: default;
+}
+
+.step-num {
+  color: var(--dark-gray-font);
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+
+.step-text {
+  color: var(--gray-font);
+  font-size: 1.1rem;
+}
