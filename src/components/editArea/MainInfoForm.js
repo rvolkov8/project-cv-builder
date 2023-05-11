@@ -22,7 +22,12 @@ class MainInfoForm extends Component {
         <form novalidate>
           <div className="job-title">
             <label htmlFor="job-title">Desired Job Title</label>
-            <input onChange={handleJobTitleChange} type="text" id="job-title" />
+            <input
+              onChange={handleJobTitleChange}
+              type="text"
+              id="job-title"
+              placeholder="e.g. Node.js Developer"
+            />
           </div>
           <div className="picture">
             <label>Picture</label>
@@ -37,19 +42,35 @@ class MainInfoForm extends Component {
               onChange={handleFirstNameChange}
               type="text"
               id="first-name"
+              placeholder="John"
             />
           </div>
           <div className="last-name">
             <label htmlFor="last-name">Last name</label>
-            <input onChange={handleLastNameChange} type="text" id="last-name" />
+            <input
+              onChange={handleLastNameChange}
+              type="text"
+              id="last-name"
+              placeholder="Newman"
+            />
           </div>
           <div className="email">
             <label htmlFor="email">Email</label>
-            <input onChange={handleEmailChange} type="email" id="email" />
+            <input
+              onChange={handleEmailChange}
+              type="email"
+              id="email"
+              placeholder="john.newman@email.com"
+            />
           </div>
           <div className="phone-number">
             <label htmlFor="tel">Phone number</label>
-            <input onChange={handlePhoneChange} type="tel" id="tel" />
+            <input
+              onChange={handlePhoneChange}
+              type="tel"
+              id="tel"
+              placeholder="+359 123 456 890"
+            />
           </div>
         </form>
       </div>

@@ -10,6 +10,10 @@
   align-content: center;
 }
 
+*::placeholder {
+  color: var(--dark-gray-font);
+}
+
 .main-prompt {
   text-align: center;
   color: var(--black-font);
