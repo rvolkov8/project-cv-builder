@@ -25,7 +25,7 @@
   padding: 0 15px;
 }
 
-.photo {
+.photo-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,6 +35,15 @@
   border-radius: 50%;
   margin-top: 15px;
   margin-bottom: 20px;
+  position: relative;
+}
+
+.photo {
+  position: absolute; /* Position the image within the div */
+  border-radius: inherit;
+  width: 101%; /* Make the image fill the div width */
+  height: 101%; /* Make the image fill the div height */
+  object-fit: cover; /* Maintain aspect ratio and fill the space */
 }
 
 .contacts,

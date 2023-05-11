@@ -4,10 +4,9 @@ import CV from './CV';
 
 class ResultArea extends Component {
   render() {
-    const { personInfo } = this.props;
     return (
       <div className="result-area-container">
-        <CV personInfo={personInfo} />
+        <CV {...this.props} />
       </div>
     );
   }

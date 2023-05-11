@@ -9,20 +9,25 @@ class CV extends Component {
   render() {
     const { personInfo } = this.props;
     const {
+      jobTitle,
+      picture,
+      firstName,
+      lastName,
       email,
       phoneNumber,
       education,
-      firstName,
-      lastName,
-      jobTitle,
       personalStatement,
       professionalExperience,
     } = personInfo;
     return (
       <div className="cv">
         <div className="left-side">
-          <div className="photo">
-            <Icon path={mdiAccount} size={2.5} color="#272828" />
+          <div className="photo-container">
+            {picture ? (
+              <img src={picture} alt="Loading..." className="photo" />
+            ) : (
+              <Icon path={mdiAccount} size={2.5} color="#272828" />
+            )}
           </div>
           <div className="contacts">
             <div className="left-side-heading">Contacts</div>
@@ -37,7 +42,7 @@ class CV extends Component {
             <div className="contacts-element-container">
               <Icon path={mdiPhone} size={0.5} color="#fbfbfd" />
               <div className="contacts-element-info">
-                <div className="contacts-element-heading">Email</div>
+                <div className="contacts-element-heading">Phone number</div>
                 <div className="contacts-element-text">{phoneNumber}</div>
               </div>
             </div>

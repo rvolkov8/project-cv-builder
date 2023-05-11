@@ -26,7 +26,6 @@ class ProfessionalExperienceElement extends Component {
                 {experience.description}
               </div>
             )}
-            {console.log(typeof experience.description)}
           </div>
         ))}
       </>
