@@ -1,0 +1,28 @@
+.education-element {
+  margin-bottom: 12px;
+}
+
+.education-institution,
+.education-location {
+  color: var(--white);
+  font-size: 0.5rem;
+  margin-bottom: 1px;
+}
+
+.education-location {
+  margin-bottom: 3px;
+}
+
+.education-dates,
+.education-description {
+  color: var(--white);
+  font-size: 0.4rem;
+  margin-bottom: 1px;
+}
+
+.education-degree {
+  color: var(--white);
+  font-size: 0.6rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}

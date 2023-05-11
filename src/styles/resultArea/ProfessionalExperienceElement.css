@@ -1,0 +1,39 @@
+.professional-experience.heading {
+  color: var(--cv-black);
+  font-weight: 700;
+  font-size: 0.7rem;
+  margin-bottom: 4px;
+}
+
+.professional-experience.divider {
+  background-color: var(--cv-black);
+  height: 1px;
+  margin-bottom: 10px;
+}
+
+.professional-experience.element {
+  margin-bottom: 15px;
+}
+
+.professional-experience.dates,
+.professional-experience.company.location {
+  color: var(--cv-darker-gray);
+  font-size: 0.4rem;
+}
+
+.professional-experience.company.location {
+  margin-bottom: 4px;
+}
+
+.professional-experience.position {
+  color: var(--cv-black);
+  font-size: 0.6rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.professional-experience.description {
+  color: var(--cv-gray);
+  font-size: 0.4rem;
+  white-space: pre-line;
+}
