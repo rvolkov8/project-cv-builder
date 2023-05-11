@@ -23,8 +23,8 @@ class CV extends Component {
       <div className="cv">
         <div className="left-side">
           <div className="photo-container">
-            {picture ? (
-              <img src={picture} alt="Loading..." className="photo" />
+            {picture.url !== null ? (
+              <img src={picture.url} alt="Loading..." className="photo" />
             ) : (
               <Icon path={mdiAccount} size={2.5} color="#272828" />
             )}

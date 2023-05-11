@@ -15,7 +15,10 @@ class App extends Component {
       },
       personInfo: {
         jobTitle: 'Example of job title',
-        picture: null,
+        picture: {
+          url: null,
+          name: '',
+        },
         firstName: 'Name',
         lastName: 'Surname',
         email: 'example@email.com',
@@ -86,7 +89,8 @@ class App extends Component {
       reader.onload = (e) => {
         this.setState((prevState) => {
           let newState = { ...prevState };
-          newState.personInfo.picture = e.target.result;
+          newState.personInfo.picture.name = file.name;
+          newState.personInfo.picture.url = e.target.result;
           return { newState };
         });
       };
@@ -128,11 +132,13 @@ class App extends Component {
 
   render() {
     const { currentStep, personInfo } = this.state;
+    const { picture } = personInfo;
     return (
       <>
         <Header currentStep={currentStep} />
         <EditArea
           handleJobTitleChange={this.handleJobTitleChange}
+          picture={picture}
           handlePictureChange={this.handlePictureChange}
           handleFirstNameChange={this.handleFirstNameChange}
           handleLastNameChange={this.handleLastNameChange}

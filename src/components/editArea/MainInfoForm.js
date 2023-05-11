@@ -10,6 +10,7 @@ class MainInfoForm extends Component {
   render() {
     const {
       handleJobTitleChange,
+      picture,
       handlePictureChange,
       handleFirstNameChange,
       handleLastNameChange,
@@ -24,8 +25,11 @@ class MainInfoForm extends Component {
             <input onChange={handleJobTitleChange} type="text" id="job-title" />
           </div>
           <div className="picture">
-            <label htmlFor="picture">Picture</label>
+            <label>Picture</label>
             <input onChange={handlePictureChange} type="file" id="picture" />
+            <label for="picture">
+              {picture.url !== null ? picture.name : 'Choose a file'}
+            </label>
           </div>
           <div className="first-name">
             <label htmlFor="first-name">First name</label>
