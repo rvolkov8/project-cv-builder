@@ -6,7 +6,7 @@
 .education-institution,
 .education-location {
   color: var(--white);
-  font-size: 0.5rem;
+  font-size: 0.4rem;
   margin-bottom: 1px;
   word-break: break-all;
   word-wrap: break-word;
@@ -21,7 +21,7 @@
 .education-dates,
 .education-description {
   color: var(--white);
-  font-size: 0.4rem;
+  font-size: 0.3rem;
   margin-bottom: 1px;
   word-break: break-all;
   word-wrap: break-word;
@@ -29,7 +29,7 @@
 
 .education-degree {
   color: var(--white);
-  font-size: 0.5rem;
+  font-size: 0.4rem;
   font-weight: 700;
   margin-bottom: 4px;
   word-break: break-all;

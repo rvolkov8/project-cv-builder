@@ -22,6 +22,7 @@ class MainInfoForm extends Component {
               type="text"
               id="job-title"
               placeholder="e.g. Node.js Developer"
+              maxLength={50}
             />
           </div>
           <div className="picture">
@@ -38,6 +39,7 @@ class MainInfoForm extends Component {
               type="text"
               id="first-name"
               placeholder="John"
+              maxLength={100}
             />
           </div>
           <div className="last-name">
@@ -47,6 +49,7 @@ class MainInfoForm extends Component {
               type="text"
               id="last-name"
               placeholder="Newman"
+              maxLength={100}
             />
           </div>
           <div className="email">
@@ -56,6 +59,7 @@ class MainInfoForm extends Component {
               type="email"
               id="email"
               placeholder="john.newman@email.com"
+              maxLength={320}
             />
           </div>
           <div className="phone-number">
@@ -65,6 +69,7 @@ class MainInfoForm extends Component {
               type="tel"
               id="tel"
               placeholder="+359 123 456 890"
+              maxLength={16}
             />
           </div>
         </form>

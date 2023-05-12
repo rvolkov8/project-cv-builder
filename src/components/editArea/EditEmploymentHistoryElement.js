@@ -23,6 +23,7 @@ class EditEmploymentHistoryElement extends Component {
               }}
               type="text"
               id="job-title-input"
+              maxLength={100}
             />
           </div>
           <div className="company-field container">
@@ -33,6 +34,7 @@ class EditEmploymentHistoryElement extends Component {
               }}
               type="text"
               id="company-input"
+              maxLength={50}
             />
           </div>
           <div className="dates-field container">
@@ -44,6 +46,7 @@ class EditEmploymentHistoryElement extends Component {
                 }}
                 type="text"
                 id="start-date-input"
+                maxLength={18}
               />
             </div>
             <div className="end-date-field container">
@@ -54,6 +57,7 @@ class EditEmploymentHistoryElement extends Component {
                 }}
                 type="text"
                 id="end-date-input"
+                maxLength={18}
               />
             </div>
           </div>
@@ -65,6 +69,7 @@ class EditEmploymentHistoryElement extends Component {
               }}
               type="text"
               id="location-input"
+              maxLength={50}
             />
           </div>
           <div className="description-field container">
@@ -74,7 +79,7 @@ class EditEmploymentHistoryElement extends Component {
                 handleEmploymentDescriptionChange(e, index);
               }}
               id="description-input"
-              maxLength={1000}
+              maxLength={850}
               cols="30"
               rows="10"
               placeholder="e.g. Created and implemented lesson plans based on child-led interests and curiosities."
