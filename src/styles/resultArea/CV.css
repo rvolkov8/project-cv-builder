@@ -1,4 +1,8 @@
 .cv {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 100px;
+
   background-color: var(--white);
   height: 497px;
   width: 410px;
