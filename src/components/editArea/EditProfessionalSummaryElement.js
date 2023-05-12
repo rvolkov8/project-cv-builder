@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 
 class EditProfessionalSummaryElement extends Component {
   render() {
-    const { handlePersonalStatementChange } = this.props;
+    const { currentStep, personInfo, handlePersonalStatementChange } =
+      this.props;
     return (
       <>
         <div className="edit-professional-summary divider"></div>
         <div className="professional-summary-field container">
           <label htmlFor="professional-summary-input">Description</label>
           <textarea
+            {...(currentStep.isReturned && {
+              value: personInfo.personalStatement,
+            })}
             onChange={handlePersonalStatementChange}
             id="professional-summary-input"
             maxLength={400}

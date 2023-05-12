@@ -12,41 +12,37 @@ class App extends Component {
       currentStep: {
         num: 1,
         text: 'Main details',
+        isReturned: false,
       },
       personInfo: {
-        jobTitle: 'Job title example',
+        jobTitle: '',
         picture: {
           url: null,
           name: '',
         },
-        firstName: 'Name',
-        lastName: 'Surname',
-        email: 'example@email.com',
-        phoneNumber: '+ 123 456 890',
-        personalStatement:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+        firstName: '',
+        lastName: '',
+        email: '',
+        phoneNumber: '',
+        personalStatement: '',
         education: [
           {
-            institution: 'Example of school name',
-            degree: 'BA in Example',
-            startDate: 'YYYY',
-            endDate: 'YYYY',
-            location: 'City, Country',
-            description: 'e.g. Graduated with High Honors',
+            institution: '',
+            degree: '',
+            startDate: '',
+            endDate: '',
+            location: '',
+            description: '',
           },
         ],
         professionalExperience: [
           {
-            jobTitle: 'Job title example',
-            company: 'Example of company name',
-            startDate: 'MM YYYY',
-            endDate: 'MM YYYY',
-            location: 'Street name Str., City, Country',
-            description: `- Consectetur adipiscing elit. - Sed do eiusmod tempor incididunt ut labore et.
-            - Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            - Dolore magna aliqua. Ut enim ad minim veniam, quis.
-            - Duis aute irure dolor in reprehenderit in voluptate velit pariatur.
-            - Lorem ipsum dolor sit amet.`,
+            jobTitle: '',
+            company: '',
+            startDate: '',
+            endDate: '',
+            location: '',
+            description: ``,
           },
         ],
       },
@@ -114,6 +110,16 @@ class App extends Component {
       let newState = { ...prevState };
       newState.currentStep.num = 2;
       newState.currentStep.text = 'Personal details';
+      return { newState };
+    });
+  };
+
+  handlePreviousStepClick = () => {
+    this.setState((prevState) => {
+      let newState = { ...prevState };
+      newState.currentStep.num = 1;
+      newState.currentStep.text = 'Main details';
+      newState.currentStep.isReturned = true;
       return { newState };
     });
   };
@@ -296,6 +302,7 @@ class App extends Component {
         <Header currentStep={currentStep} />
         <EditArea
           currentStep={currentStep}
+          personInfo={personInfo}
           handleJobTitleChange={this.handleJobTitleChange}
           picture={picture}
           handlePictureChange={this.handlePictureChange}
@@ -304,6 +311,7 @@ class App extends Component {
           handleEmailChange={this.handleEmailChange}
           handlePhoneChange={this.handlePhoneChange}
           handleContinueClick={this.handleContinueClick}
+          handlePreviousStepClick={this.handlePreviousStepClick}
           handlePersonalStatementChange={this.handlePersonalStatementChange}
           education={education}
           handleEducationsNumChange={this.handleEducationsNumChange}

@@ -20,7 +20,7 @@ class EditEmploymentHistorySection extends Component {
           Employment history
         </div>
         <div className="edit-employment-history prompt">
-          Show yor relevant experience (last 10 years). Use bullet points to
+          Show your relevant experience (last 10 years). Use bullet points to
           note your achievements. If possible - use numbers and facts.
         </div>
         {employmentHistoryElements}

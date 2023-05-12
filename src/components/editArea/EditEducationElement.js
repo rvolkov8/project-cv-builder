@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 class EditEducationElement extends Component {
   render() {
     const {
+      currentStep,
+      education,
       index,
       handleEducationInstitutionChange,
       handleEducationDegreeChange,
@@ -18,6 +20,9 @@ class EditEducationElement extends Component {
           <div className="institution-field container">
             <label htmlFor="institution-input">Institution</label>
             <input
+              {...(currentStep.isReturned && {
+                value: education[index].institution,
+              })}
               onChange={(e) => {
                 handleEducationInstitutionChange(e, index);
               }}
@@ -29,6 +34,9 @@ class EditEducationElement extends Component {
           <div className="degree-field container">
             <label htmlFor="degree-input">Degree</label>
             <input
+              {...(currentStep.isReturned && {
+                value: education[index].degree,
+              })}
               onChange={(e) => {
                 handleEducationDegreeChange(e, index);
               }}
@@ -41,6 +49,9 @@ class EditEducationElement extends Component {
             <div className="start-date-field-container">
               <label htmlFor="start-date-input">Start date</label>
               <input
+                {...(currentStep.isReturned && {
+                  value: education[index].startDate,
+                })}
                 onChange={(e) => {
                   handleEducationStartDataChange(e, index);
                 }}
@@ -52,6 +63,9 @@ class EditEducationElement extends Component {
             <div className="end-date-field container">
               <label htmlFor="end-date-input">End date</label>
               <input
+                {...(currentStep.isReturned && {
+                  value: education[index].endDate,
+                })}
                 onChange={(e) => {
                   handleEducationEndDataChange(e, index);
                 }}
@@ -64,6 +78,9 @@ class EditEducationElement extends Component {
           <div className="location-field container">
             <label htmlFor="location-input">Location</label>
             <input
+              {...(currentStep.isReturned && {
+                value: education[index].location,
+              })}
               onChange={(e) => {
                 handleEducationLocationChange(e, index);
               }}
@@ -75,6 +92,9 @@ class EditEducationElement extends Component {
           <div className="description-field container">
             <label htmlFor="description-input">Description</label>
             <textarea
+              {...(currentStep.isReturned && {
+                value: education[index].description,
+              })}
               onChange={(e) => {
                 handleEducationDescriptionChange(e, index);
               }}

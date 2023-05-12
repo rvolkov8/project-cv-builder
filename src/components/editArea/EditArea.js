@@ -5,7 +5,8 @@ import PersonalDetailsForm from './PersonalDetailsForm';
 
 class EditArea extends Component {
   render() {
-    const { currentStep, handleContinueClick } = this.props;
+    const { currentStep, handleContinueClick, handlePreviousStepClick } =
+      this.props;
     return (
       <div className="edit-area-container">
         {currentStep.num === 1 ? (
@@ -29,7 +30,15 @@ class EditArea extends Component {
               Provide some additional information for your future employer
             </div>
             <PersonalDetailsForm {...this.props} />
-            <button className="download-button">Download CV</button>
+            <div className="buttons-container">
+              <button
+                onClick={handlePreviousStepClick}
+                className="previous-step-button"
+              >
+                Previous step
+              </button>
+              <button className="download-button">Download CV</button>
+            </div>
           </>
         )}
       </div>

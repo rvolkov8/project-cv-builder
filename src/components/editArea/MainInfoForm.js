@@ -4,6 +4,8 @@ import '../../styles/editArea/MainInfoForm.css';
 class MainInfoForm extends Component {
   render() {
     const {
+      currentStep,
+      personInfo,
       handleJobTitleChange,
       picture,
       handlePictureChange,
@@ -12,12 +14,14 @@ class MainInfoForm extends Component {
       handleEmailChange,
       handlePhoneChange,
     } = this.props;
+    const { jobTitle, firstName, lastName, email, phoneNumber } = personInfo;
     return (
       <div className="main-info-form-container">
         <form className="main-info-form" novalidate>
           <div className="job-title">
             <label htmlFor="job-title">Desired Job Title</label>
             <input
+              {...(currentStep.isReturned && { value: jobTitle })}
               onChange={handleJobTitleChange}
               type="text"
               id="job-title"
@@ -35,6 +39,7 @@ class MainInfoForm extends Component {
           <div className="first-name">
             <label htmlFor="first-name">First name</label>
             <input
+              {...(currentStep.isReturned && { value: firstName })}
               onChange={handleFirstNameChange}
               type="text"
               id="first-name"
@@ -45,6 +50,7 @@ class MainInfoForm extends Component {
           <div className="last-name">
             <label htmlFor="last-name">Last name</label>
             <input
+              {...(currentStep.isReturned && { value: lastName })}
               onChange={handleLastNameChange}
               type="text"
               id="last-name"
@@ -55,6 +61,7 @@ class MainInfoForm extends Component {
           <div className="email">
             <label htmlFor="email">Email</label>
             <input
+              {...(currentStep.isReturned && { value: email })}
               onChange={handleEmailChange}
               type="email"
               id="email"
@@ -65,6 +72,7 @@ class MainInfoForm extends Component {
           <div className="phone-number">
             <label htmlFor="tel">Phone number</label>
             <input
+              {...(currentStep.isReturned && { value: phoneNumber })}
               onChange={handlePhoneChange}
               type="tel"
               id="tel"

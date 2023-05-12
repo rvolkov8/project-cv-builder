@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 class EditEmploymentHistoryElement extends Component {
   render() {
     const {
+      currentStep,
+      professionalExperience,
       index,
       handleEmploymentJobTitleChange,
       handleEmploymentCompanyChange,
@@ -18,6 +20,9 @@ class EditEmploymentHistoryElement extends Component {
           <div className="job-title-field container">
             <label htmlFor="job-title-input">Job title</label>
             <input
+              {...(currentStep.isReturned && {
+                value: professionalExperience[index].jobTitle,
+              })}
               onChange={(e) => {
                 handleEmploymentJobTitleChange(e, index);
               }}
@@ -29,6 +34,9 @@ class EditEmploymentHistoryElement extends Component {
           <div className="company-field container">
             <label htmlFor="company-input">Company</label>
             <input
+              {...(currentStep.isReturned && {
+                value: professionalExperience[index].company,
+              })}
               onChange={(e) => {
                 handleEmploymentCompanyChange(e, index);
               }}
@@ -41,6 +49,9 @@ class EditEmploymentHistoryElement extends Component {
             <div className="start-date-field-container">
               <label htmlFor="start-date-input">Start date</label>
               <input
+                {...(currentStep.isReturned && {
+                  value: professionalExperience[index].startDate,
+                })}
                 onChange={(e) => {
                   handleEmploymentStartDateChange(e, index);
                 }}
@@ -52,6 +63,9 @@ class EditEmploymentHistoryElement extends Component {
             <div className="end-date-field container">
               <label htmlFor="end-date-input">End date</label>
               <input
+                {...(currentStep.isReturned && {
+                  value: professionalExperience[index].endDate,
+                })}
                 onChange={(e) => {
                   handleEmploymentEndDateChange(e, index);
                 }}
@@ -64,6 +78,9 @@ class EditEmploymentHistoryElement extends Component {
           <div className="location-field container">
             <label htmlFor="location-input">Location</label>
             <input
+              {...(currentStep.isReturned && {
+                value: professionalExperience[index].location,
+              })}
               onChange={(e) => {
                 handleEmploymentLocationChange(e, index);
               }}
@@ -75,6 +92,9 @@ class EditEmploymentHistoryElement extends Component {
           <div className="description-field container">
             <label htmlFor="description-input">Description</label>
             <textarea
+              {...(currentStep.isReturned && {
+                value: professionalExperience[index].description,
+              })}
               onChange={(e) => {
                 handleEmploymentDescriptionChange(e, index);
               }}

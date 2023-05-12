@@ -42,13 +42,28 @@
   cursor: pointer;
 }
 
+.buttons-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+}
+
 .download-button {
   padding: 10px 30px;
-  margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
   color: var(--white);
   background-color: var(--blue);
+  border-radius: 6px;
+  border: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.previous-step-button {
+  padding: 10px 30px;
+  color: var(--darker-gray-font);
+  background-color: var(--gray-font);
   border-radius: 6px;
   border: none;
   font-weight: 700;
