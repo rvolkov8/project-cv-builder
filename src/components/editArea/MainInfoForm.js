@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import '../../styles/editArea/MainInfoForm.css';
 
 class MainInfoForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     const {
       handleJobTitleChange,
@@ -19,7 +14,7 @@ class MainInfoForm extends Component {
     } = this.props;
     return (
       <div className="main-info-form-container">
-        <form novalidate>
+        <form className="main-info-form" novalidate>
           <div className="job-title">
             <label htmlFor="job-title">Desired Job Title</label>
             <input

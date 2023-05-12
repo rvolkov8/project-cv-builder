@@ -130,6 +130,15 @@ class App extends Component {
     });
   };
 
+  handleContinueClick = () => {
+    this.setState((prevState) => {
+      let newState = { ...prevState };
+      newState.currentStep.num = 2;
+      newState.currentStep.text = 'Personal details';
+      return { newState };
+    });
+  };
+
   render() {
     const { currentStep, personInfo } = this.state;
     const { picture } = personInfo;
@@ -137,6 +146,7 @@ class App extends Component {
       <>
         <Header currentStep={currentStep} />
         <EditArea
+          currentStep={currentStep}
           handleJobTitleChange={this.handleJobTitleChange}
           picture={picture}
           handlePictureChange={this.handlePictureChange}
@@ -144,6 +154,7 @@ class App extends Component {
           handleLastNameChange={this.handleLastNameChange}
           handleEmailChange={this.handleEmailChange}
           handlePhoneChange={this.handlePhoneChange}
+          handleContinueClick={this.handleContinueClick}
         />
         <ResultArea personInfo={personInfo} />
       </>
