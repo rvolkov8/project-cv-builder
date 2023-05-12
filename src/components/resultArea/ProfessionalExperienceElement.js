@@ -19,7 +19,7 @@ class ProfessionalExperienceElement extends Component {
               {experience.company} | {experience.location}
             </div>
             <div className="professional-experience position">
-              {experience.position.toUpperCase()}
+              {experience.jobTitle.toUpperCase()}
             </div>
             {experience.description !== '' && (
               <div className="professional-experience description">

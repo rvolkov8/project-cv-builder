@@ -2,35 +2,77 @@ import React, { Component } from 'react';
 
 class EditEmploymentHistoryElement extends Component {
   render() {
+    const {
+      index,
+      handleEmploymentJobTitleChange,
+      handleEmploymentCompanyChange,
+      handleEmploymentStartDateChange,
+      handleEmploymentEndDateChange,
+      handleEmploymentLocationChange,
+      handleEmploymentDescriptionChange,
+    } = this.props;
     return (
       <>
         <div className="edit-employment-history-element divider"></div>
         <div className="edit-employment-history-element container">
           <div className="job-title-field container">
             <label htmlFor="job-title-input">Job title</label>
-            <input type="text" id="job-title-input" />
+            <input
+              onChange={(e) => {
+                handleEmploymentJobTitleChange(e, index);
+              }}
+              type="text"
+              id="job-title-input"
+            />
           </div>
           <div className="company-field container">
             <label htmlFor="company-input">Company</label>
-            <input type="text" id="company-input" />
+            <input
+              onChange={(e) => {
+                handleEmploymentCompanyChange(e, index);
+              }}
+              type="text"
+              id="company-input"
+            />
           </div>
           <div className="dates-field container">
             <div className="start-date-field-container">
               <label htmlFor="start-date-input">Start date</label>
-              <input type="text" id="start-date-input" />
+              <input
+                onChange={(e) => {
+                  handleEmploymentStartDateChange(e, index);
+                }}
+                type="text"
+                id="start-date-input"
+              />
             </div>
             <div className="end-date-field container">
               <label htmlFor="end-date-input">End date</label>
-              <input type="text" id="end-date-input" />
+              <input
+                onChange={(e) => {
+                  handleEmploymentEndDateChange(e, index);
+                }}
+                type="text"
+                id="end-date-input"
+              />
             </div>
           </div>
           <div className="location-field container">
             <label htmlFor="location-input">Location</label>
-            <input type="text" id="location-input" />
+            <input
+              onChange={(e) => {
+                handleEmploymentLocationChange(e, index);
+              }}
+              type="text"
+              id="location-input"
+            />
           </div>
           <div className="description-field container">
             <label htmlFor="description-input">Description</label>
             <textarea
+              onChange={(e) => {
+                handleEmploymentDescriptionChange(e, index);
+              }}
               id="description-input"
               maxLength={1000}
               cols="30"

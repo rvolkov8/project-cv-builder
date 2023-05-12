@@ -13,7 +13,7 @@ class EditProfessionalSummarySection extends Component {
           Mention your role, experience, and most importantly - your biggest
           achievements, best qualities and skills.
         </div>
-        <EditProfessionalSummaryElement />
+        <EditProfessionalSummaryElement {...this.props} />
       </div>
     );
   }

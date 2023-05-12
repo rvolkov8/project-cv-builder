@@ -3,10 +3,16 @@ import EditEmploymentHistoryElement from './EditEmploymentHistoryElement';
 
 class EditEmploymentHistorySection extends Component {
   render() {
-    const { professionalExperiencesNum } = this.props;
+    const { professionalExperience, handleEmploymentsNumChange } = this.props;
     const employmentHistoryElements = Array.from(
-      { length: professionalExperiencesNum },
-      (_, index) => <EditEmploymentHistoryElement key={index} />
+      { length: professionalExperience.length },
+      (_, index) => (
+        <EditEmploymentHistoryElement
+          key={index}
+          index={index}
+          {...this.props}
+        />
+      )
     );
     return (
       <div className="edit-employment-history container">
@@ -18,7 +24,13 @@ class EditEmploymentHistorySection extends Component {
           note your achievements. If possible - use numbers and facts.
         </div>
         {employmentHistoryElements}
-        <button className="add-button employment">+ Add employment</button>
+        <button
+          type="button"
+          onClick={handleEmploymentsNumChange}
+          className="add-button employment"
+        >
+          + Add employment
+        </button>
       </div>
     );
   }

@@ -93,6 +93,8 @@
 .right-side {
   grid-area: 1 / 2 / 1 / 3;
   padding: 20px 15px;
+  height: 100%; /* Add a fixed height */
+  overflow: hidden;
 }
 
 .name {
@@ -111,8 +113,11 @@
 }
 
 .personal-statement {
+  height: fit-content;
   color: var(--cv-gray);
   font-size: 0.4rem;
   text-align: justify;
   margin-bottom: 10px;
+  word-wrap: break-word;
+  line-height: 8px;
 }

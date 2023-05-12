@@ -14,7 +14,7 @@ class App extends Component {
         text: 'Main details',
       },
       personInfo: {
-        jobTitle: 'Example of job title',
+        jobTitle: 'Job title example',
         picture: {
           url: null,
           name: '',
@@ -27,47 +27,26 @@ class App extends Component {
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
         education: [
           {
-            startDate: 'YYYY',
-            endDate: 'YYYY',
             institution: 'Example of school name',
-            location: 'City, Country',
             degree: 'BA in Example',
-            description: 'e.g. Graduated with High Honors',
-          },
-          {
             startDate: 'YYYY',
             endDate: 'YYYY',
-            institution: 'Example of school name',
             location: 'City, Country',
-            degree: 'High School',
-            description: '',
+            description: 'e.g. Graduated with High Honors',
           },
         ],
         professionalExperience: [
           {
+            jobTitle: 'Job title example',
+            company: 'Example of company name',
             startDate: 'MM YYYY',
             endDate: 'MM YYYY',
-            company: 'Example of company name',
             location: 'Street name Str., City, Country',
-            position: 'Position example',
             description: `- Consectetur adipiscing elit. - Sed do eiusmod tempor incididunt ut labore et.
             - Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
             - Dolore magna aliqua. Ut enim ad minim veniam, quis.
             - Duis aute irure dolor in reprehenderit in voluptate velit pariatur.
             - Lorem ipsum dolor sit amet.`,
-          },
-          {
-            startDate: 'YYYY',
-            endDate: 'YYYY',
-            company: 'Example of company name',
-            location: 'Street name Str., City, Country',
-            position: 'Position example',
-            description: `- Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            - Consectetur adipiscing elit.
-            - Sed do eiusmod tempor incididunt ut labore et.
-            - Duis aute irure dolor in reprehenderit in voluptate velit pariatur.
-            - Lorem ipsum dolor sit amet.
-            - Dolore magna aliqua. Ut enim ad minim veniam, quis.`,
           },
         ],
       },
@@ -139,9 +118,179 @@ class App extends Component {
     });
   };
 
+  handlePersonalStatementChange = (e) => {
+    this.setState((prevState) => {
+      let newState = { ...prevState };
+      newState.personInfo.personalStatement = e.target.value;
+      return { newState };
+    });
+  };
+
+  handleEducationsNumChange = () => {
+    this.setState((prevState) => {
+      const { personInfo } = prevState;
+      const { education } = personInfo;
+
+      const newEducation = {
+        institution: 'Example of school name',
+        degree: 'BA in Example',
+        startDate: 'YYYY',
+        endDate: 'YYYY',
+        location: 'City, Country',
+        description: 'e.g. Graduated with High Honors',
+      };
+
+      const updatedEducation = [...education, newEducation];
+
+      const newState = {
+        ...prevState,
+        personInfo: {
+          ...personInfo,
+          education: updatedEducation,
+        },
+      };
+
+      return newState;
+    });
+  };
+
+  handleEducationInstitutionChange = (e, index) => {
+    this.setState((prevState) => {
+      const newState = { ...prevState };
+      newState.personInfo.education[index].institution = e.target.value;
+      return newState;
+    });
+  };
+
+  handleEducationDegreeChange = (e, index) => {
+    this.setState((prevState) => {
+      const newState = { ...prevState };
+      newState.personInfo.education[index].degree = e.target.value;
+      return newState;
+    });
+  };
+
+  handleEducationStartDataChange = (e, index) => {
+    this.setState((prevState) => {
+      const newState = { ...prevState };
+      newState.personInfo.education[index].startDate = e.target.value;
+      return newState;
+    });
+  };
+
+  handleEducationEndDataChange = (e, index) => {
+    this.setState((prevState) => {
+      const newState = { ...prevState };
+      newState.personInfo.education[index].endDate = e.target.value;
+      return newState;
+    });
+  };
+
+  handleEducationLocationChange = (e, index) => {
+    this.setState((prevState) => {
+      const newState = { ...prevState };
+      newState.personInfo.education[index].location = e.target.value;
+      return newState;
+    });
+  };
+
+  handleEducationDescriptionChange = (e, index) => {
+    this.setState((prevState) => {
+      const newState = { ...prevState };
+      newState.personInfo.education[index].description = e.target.value;
+      return newState;
+    });
+  };
+
+  handleEmploymentsNumChange = () => {
+    this.setState((prevState) => {
+      const { personInfo } = prevState;
+      const { professionalExperience } = personInfo;
+
+      const newEmployment = {
+        jobTitle: 'Job Title example',
+        company: 'Example of company name',
+        startDate: 'MM YYYY',
+        endDate: 'MM YYYY',
+        location: 'Street name Str., City, Country',
+        description: `- Consectetur adipiscing elit. - Sed do eiusmod tempor incididunt ut labore et.
+        - Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        - Dolore magna aliqua. Ut enim ad minim veniam, quis.
+        - Duis aute irure dolor in reprehenderit in voluptate velit pariatur.
+        - Lorem ipsum dolor sit amet.`,
+      };
+
+      const updatedEmployments = [...professionalExperience, newEmployment];
+
+      const newState = {
+        ...prevState,
+        personInfo: {
+          ...personInfo,
+          professionalExperience: updatedEmployments,
+        },
+      };
+
+      return newState;
+    });
+  };
+
+  handleEmploymentJobTitleChange = (e, index) => {
+    this.setState((prevState) => {
+      const newState = { ...prevState };
+      newState.personInfo.professionalExperience[index].jobTitle =
+        e.target.value;
+      return newState;
+    });
+  };
+
+  handleEmploymentCompanyChange = (e, index) => {
+    this.setState((prevState) => {
+      const newState = { ...prevState };
+      newState.personInfo.professionalExperience[index].company =
+        e.target.value;
+      return newState;
+    });
+  };
+
+  handleEmploymentStartDateChange = (e, index) => {
+    this.setState((prevState) => {
+      const newState = { ...prevState };
+      newState.personInfo.professionalExperience[index].startDate =
+        e.target.value;
+      return newState;
+    });
+  };
+
+  handleEmploymentEndDateChange = (e, index) => {
+    this.setState((prevState) => {
+      const newState = { ...prevState };
+      newState.personInfo.professionalExperience[index].endDate =
+        e.target.value;
+      return newState;
+    });
+  };
+
+  handleEmploymentLocationChange = (e, index) => {
+    this.setState((prevState) => {
+      const newState = { ...prevState };
+      newState.personInfo.professionalExperience[index].location =
+        e.target.value;
+      return newState;
+    });
+  };
+
+  handleEmploymentDescriptionChange = (e, index) => {
+    this.setState((prevState) => {
+      const newState = { ...prevState };
+      newState.personInfo.professionalExperience[index].description =
+        e.target.value;
+      return newState;
+    });
+  };
+
   render() {
     const { currentStep, personInfo } = this.state;
-    const { picture } = personInfo;
+    const { picture, education, professionalExperience } = personInfo;
     return (
       <>
         <Header currentStep={currentStep} />
@@ -155,6 +304,29 @@ class App extends Component {
           handleEmailChange={this.handleEmailChange}
           handlePhoneChange={this.handlePhoneChange}
           handleContinueClick={this.handleContinueClick}
+          handlePersonalStatementChange={this.handlePersonalStatementChange}
+          education={education}
+          handleEducationsNumChange={this.handleEducationsNumChange}
+          handleEducationInstitutionChange={
+            this.handleEducationInstitutionChange
+          }
+          handleEducationDegreeChange={this.handleEducationDegreeChange}
+          handleEducationStartDataChange={this.handleEducationStartDataChange}
+          handleEducationEndDataChange={this.handleEducationEndDataChange}
+          handleEducationLocationChange={this.handleEducationLocationChange}
+          handleEducationDescriptionChange={
+            this.handleEducationDescriptionChange
+          }
+          professionalExperience={professionalExperience}
+          handleEmploymentsNumChange={this.handleEmploymentsNumChange}
+          handleEmploymentJobTitleChange={this.handleEmploymentJobTitleChange}
+          handleEmploymentCompanyChange={this.handleEmploymentCompanyChange}
+          handleEmploymentStartDateChange={this.handleEmploymentStartDateChange}
+          handleEmploymentEndDateChange={this.handleEmploymentEndDateChange}
+          handleEmploymentLocationChange={this.handleEmploymentLocationChange}
+          handleEmploymentDescriptionChange={
+            this.handleEmploymentDescriptionChange
+          }
         />
         <ResultArea personInfo={personInfo} />
       </>
