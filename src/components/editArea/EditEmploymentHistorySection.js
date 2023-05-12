@@ -24,13 +24,15 @@ class EditEmploymentHistorySection extends Component {
           note your achievements. If possible - use numbers and facts.
         </div>
         {employmentHistoryElements}
-        <button
-          type="button"
-          onClick={handleEmploymentsNumChange}
-          className="add-button employment"
-        >
-          + Add employment
-        </button>
+        {professionalExperience.length < 3 && (
+          <button
+            type="button"
+            onClick={handleEmploymentsNumChange}
+            className="add-button employment"
+          >
+            + Add employment
+          </button>
+        )}
       </div>
     );
   }

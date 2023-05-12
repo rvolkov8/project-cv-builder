@@ -18,13 +18,15 @@ class EditEducationSection extends Component {
           and background will bring to your job.
         </div>
         {educationElements}
-        <button
-          type="button"
-          onClick={handleEducationsNumChange}
-          className="add-button education"
-        >
-          + Add education
-        </button>
+        {education.length < 3 && (
+          <button
+            type="button"
+            onClick={handleEducationsNumChange}
+            className="add-button education"
+          >
+            + Add education
+          </button>
+        )}
       </div>
     );
   }
