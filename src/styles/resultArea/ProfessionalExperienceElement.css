@@ -7,7 +7,7 @@
 
 .professional-experience.divider {
   background-color: var(--cv-black);
-  height: 1px;
+  height: 0.5px;
   margin-bottom: 10px;
 }
 
