@@ -1,5 +1,6 @@
 .education-element {
   margin-bottom: 12px;
+  overflow: hidden;
 }
 
 .education-institution,
@@ -7,10 +8,14 @@
   color: var(--white);
   font-size: 0.5rem;
   margin-bottom: 1px;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .education-location {
   margin-bottom: 3px;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .education-dates,
@@ -18,6 +23,8 @@
   color: var(--white);
   font-size: 0.4rem;
   margin-bottom: 1px;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .education-degree {
@@ -25,4 +32,6 @@
   font-size: 0.5rem;
   font-weight: 700;
   margin-bottom: 4px;
+  word-break: break-all;
+  word-wrap: break-word;
 }
