@@ -328,6 +328,22 @@ class App extends Component {
     });
   };
 
+  checkIfMainInfoIsFilled = () => {
+    const { personInfo } = this.state;
+    const { jobTitle, firstName, lastName, email, phoneNumber } = personInfo;
+    if (
+      jobTitle.trim() !== '' ||
+      firstName.trim() !== '' ||
+      lastName.trim() !== '' ||
+      email.trim() !== '' ||
+      phoneNumber.trim() !== ''
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   render() {
     const { currentStep, personInfo } = this.state;
     const { picture, education, professionalExperience } = personInfo;
@@ -371,6 +387,7 @@ class App extends Component {
             this.handleEmploymentDescriptionChange
           }
           deleteEmploymentElement={this.deleteEmploymentElement}
+          checkIfMainInfoIsFilled={this.checkIfMainInfoIsFilled}
         />
         <ResultArea personInfo={personInfo} />
       </>

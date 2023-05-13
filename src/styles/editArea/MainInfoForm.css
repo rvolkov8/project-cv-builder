@@ -42,6 +42,7 @@ input[type="tel"]:focus {
 
 input.invalid {
   outline: 1px solid var(--red);
+  background-color: var(--light-red);
 }
 
 input.valid {

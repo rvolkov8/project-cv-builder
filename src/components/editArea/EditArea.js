@@ -5,8 +5,12 @@ import PersonalDetailsForm from './PersonalDetailsForm';
 
 class EditArea extends Component {
   render() {
-    const { currentStep, handleContinueClick, handlePreviousStepClick } =
-      this.props;
+    const {
+      currentStep,
+      handleContinueClick,
+      handlePreviousStepClick,
+      checkIfMainInfoIsFilled,
+    } = this.props;
     return (
       <div className="edit-area-container">
         {currentStep.num === 1 ? (
@@ -20,7 +24,12 @@ class EditArea extends Component {
               <span className="underlined">terms</span> and{' '}
               <span className="underlined">privacy policy</span>
             </div>
-            <button onClick={handleContinueClick} className="continue-button">
+            <button
+              onClick={() => {
+                checkIfMainInfoIsFilled() && handleContinueClick();
+              }}
+              className="continue-button"
+            >
               Continue
             </button>
           </>

@@ -2,6 +2,41 @@ import React, { Component } from 'react';
 import '../../styles/editArea/MainInfoForm.css';
 
 class MainInfoForm extends Component {
+  checkIfEmpty = (e) => {
+    if (e.target.value.trim() === '') {
+      e.target.classList.add('invalid');
+      e.target.classList.remove('valid');
+    } else {
+      e.target.classList.remove('invalid');
+      e.target.classList.add('valid');
+    }
+  };
+
+  checkEmailValidity = (e) => {
+    const emailRegExp =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const isValid = emailRegExp.test(e.target.value);
+    if (isValid) {
+      e.target.classList.remove('invalid');
+      e.target.classList.add('valid');
+    } else {
+      e.target.classList.add('invalid');
+      e.target.classList.remove('valid');
+    }
+  };
+
+  checkPhoneNumberValidity = (e) => {
+    const firstPhoneNumberRegExp = /^\+\d{3}(?:\s?\d{3}){3}$/;
+    const isValid = firstPhoneNumberRegExp.test(e.target.value);
+    if (isValid) {
+      e.target.classList.remove('invalid');
+      e.target.classList.add('valid');
+    } else {
+      e.target.classList.add('invalid');
+      e.target.classList.remove('valid');
+    }
+  };
+
   render() {
     const {
       currentStep,
@@ -22,7 +57,10 @@ class MainInfoForm extends Component {
             <label htmlFor="job-title">Desired Job Title</label>
             <input
               {...(currentStep.isReturned && { value: jobTitle })}
-              onChange={handleJobTitleChange}
+              onChange={(e) => {
+                handleJobTitleChange(e);
+                this.checkIfEmpty(e);
+              }}
               type="text"
               id="job-title"
               placeholder="e.g. Node.js Developer"
@@ -40,7 +78,10 @@ class MainInfoForm extends Component {
             <label htmlFor="first-name">First name</label>
             <input
               {...(currentStep.isReturned && { value: firstName })}
-              onChange={handleFirstNameChange}
+              onChange={(e) => {
+                handleFirstNameChange(e);
+                this.checkIfEmpty(e);
+              }}
               type="text"
               id="first-name"
               placeholder="John"
@@ -51,7 +92,10 @@ class MainInfoForm extends Component {
             <label htmlFor="last-name">Last name</label>
             <input
               {...(currentStep.isReturned && { value: lastName })}
-              onChange={handleLastNameChange}
+              onChange={(e) => {
+                handleLastNameChange(e);
+                this.checkIfEmpty(e);
+              }}
               type="text"
               id="last-name"
               placeholder="Newman"
@@ -62,7 +106,10 @@ class MainInfoForm extends Component {
             <label htmlFor="email">Email</label>
             <input
               {...(currentStep.isReturned && { value: email })}
-              onChange={handleEmailChange}
+              onChange={(e) => {
+                handleEmailChange(e);
+                this.checkEmailValidity(e);
+              }}
               type="email"
               id="email"
               placeholder="john.newman@email.com"
@@ -73,7 +120,10 @@ class MainInfoForm extends Component {
             <label htmlFor="tel">Phone number</label>
             <input
               {...(currentStep.isReturned && { value: phoneNumber })}
-              onChange={handlePhoneChange}
+              onChange={(e) => {
+                handlePhoneChange(e);
+                this.checkPhoneNumberValidity(e);
+              }}
               type="tel"
               id="tel"
               placeholder="+359 123 456 890"
