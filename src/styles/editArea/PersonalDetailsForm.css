@@ -47,8 +47,27 @@
   background-color: var(--dark-gray-font);
 }
 
+.delete-element-button {
+  position: absolute;
+  color: var(--red);
+  background-color: var(--white);
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 3px;
+  padding: 2px 10px;
+  cursor: pointer;
+  top: -6px;
+  right: 0px;
+}
+
+.delete-element-button:hover {
+  color: var(--white);
+  background-color: var(--red);
+}
+
 .edit-education-element.container,
 .edit-employment-history-element.container {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.8fr 0.8fr 2fr;

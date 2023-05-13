@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import './styles/App.css';
 
 import Header from './components/header/Header';
@@ -27,6 +28,7 @@ class App extends Component {
         personalStatement: '',
         education: [
           {
+            id: uuidv4(),
             institution: '',
             degree: '',
             startDate: '',
@@ -37,6 +39,7 @@ class App extends Component {
         ],
         professionalExperience: [
           {
+            id: uuidv4(),
             jobTitle: '',
             company: '',
             startDate: '',
@@ -138,12 +141,13 @@ class App extends Component {
       const { education } = personInfo;
 
       const newEducation = {
-        institution: 'Example of school name',
-        degree: 'BA in Example',
-        startDate: 'YYYY',
-        endDate: 'YYYY',
-        location: 'City, Country',
-        description: 'e.g. Graduated with High Honors',
+        id: uuidv4(),
+        institution: '',
+        degree: '',
+        startDate: '',
+        endDate: '',
+        location: '',
+        description: '',
       };
 
       const updatedEducation = [...education, newEducation];
@@ -208,22 +212,35 @@ class App extends Component {
     });
   };
 
+  deleteEducationElement = (id) => {
+    this.setState((prevState) => {
+      const { personInfo } = prevState;
+      const newEducation = prevState.personInfo.education.filter(
+        (educationItem) => educationItem.id !== id
+      );
+      return {
+        ...prevState,
+        personInfo: {
+          ...personInfo,
+          education: newEducation,
+        },
+      };
+    });
+  };
+
   handleEmploymentsNumChange = () => {
     this.setState((prevState) => {
       const { personInfo } = prevState;
       const { professionalExperience } = personInfo;
 
       const newEmployment = {
-        jobTitle: 'Job Title example',
-        company: 'Example of company name',
-        startDate: 'MM YYYY',
-        endDate: 'MM YYYY',
-        location: 'Street name Str., City, Country',
-        description: `- Consectetur adipiscing elit. - Sed do eiusmod tempor incididunt ut labore et.
-        - Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        - Dolore magna aliqua. Ut enim ad minim veniam, quis.
-        - Duis aute irure dolor in reprehenderit in voluptate velit pariatur.
-        - Lorem ipsum dolor sit amet.`,
+        id: uuidv4(),
+        jobTitle: '',
+        company: '',
+        startDate: '',
+        endDate: '',
+        location: '',
+        description: ``,
       };
 
       const updatedEmployments = [...professionalExperience, newEmployment];
@@ -294,6 +311,23 @@ class App extends Component {
     });
   };
 
+  deleteEmploymentElement = (id) => {
+    this.setState((prevState) => {
+      const { personInfo } = prevState;
+      const newProfessionalExperience =
+        personInfo.professionalExperience.filter(
+          (professionalExperienceItem) => professionalExperienceItem.id !== id
+        );
+      return {
+        ...prevState,
+        personInfo: {
+          ...personInfo,
+          professionalExperience: newProfessionalExperience,
+        },
+      };
+    });
+  };
+
   render() {
     const { currentStep, personInfo } = this.state;
     const { picture, education, professionalExperience } = personInfo;
@@ -325,6 +359,7 @@ class App extends Component {
           handleEducationDescriptionChange={
             this.handleEducationDescriptionChange
           }
+          deleteEducationElement={this.deleteEducationElement}
           professionalExperience={professionalExperience}
           handleEmploymentsNumChange={this.handleEmploymentsNumChange}
           handleEmploymentJobTitleChange={this.handleEmploymentJobTitleChange}
@@ -335,6 +370,7 @@ class App extends Component {
           handleEmploymentDescriptionChange={
             this.handleEmploymentDescriptionChange
           }
+          deleteEmploymentElement={this.deleteEmploymentElement}
         />
         <ResultArea personInfo={personInfo} />
       </>

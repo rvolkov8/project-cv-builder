@@ -7,7 +7,7 @@ class EducationElement extends Component {
     return (
       <>
         {education.map((ed) => (
-          <div className="education-element">
+          <div className="education-element" key={ed.id}>
             <div className="education-dates">
               {ed.startDate} - {ed.endDate}
             </div>

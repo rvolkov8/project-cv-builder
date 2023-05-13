@@ -6,17 +6,28 @@ class EditEducationElement extends Component {
       currentStep,
       education,
       index,
+      id,
       handleEducationInstitutionChange,
       handleEducationDegreeChange,
       handleEducationStartDataChange,
       handleEducationEndDataChange,
       handleEducationLocationChange,
       handleEducationDescriptionChange,
+      deleteEducationElement,
     } = this.props;
     return (
       <>
         <div className="edit-education-element divider"></div>
         <div className="edit-education-element container">
+          <button
+            type="button"
+            onClick={() => {
+              deleteEducationElement(id);
+            }}
+            className="delete-element-button"
+          >
+            delete
+          </button>
           <div className="institution-field container">
             <label htmlFor="institution-input">Institution</label>
             <input

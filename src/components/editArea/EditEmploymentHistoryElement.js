@@ -6,17 +6,28 @@ class EditEmploymentHistoryElement extends Component {
       currentStep,
       professionalExperience,
       index,
+      id,
       handleEmploymentJobTitleChange,
       handleEmploymentCompanyChange,
       handleEmploymentStartDateChange,
       handleEmploymentEndDateChange,
       handleEmploymentLocationChange,
       handleEmploymentDescriptionChange,
+      deleteEmploymentElement,
     } = this.props;
     return (
       <>
         <div className="edit-employment-history-element divider"></div>
         <div className="edit-employment-history-element container">
+          <button
+            type="button"
+            onClick={() => {
+              deleteEmploymentElement(id);
+            }}
+            className="delete-element-button"
+          >
+            delete
+          </button>
           <div className="job-title-field container">
             <label htmlFor="job-title-input">Job title</label>
             <input

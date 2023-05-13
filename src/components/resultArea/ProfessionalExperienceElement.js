@@ -11,7 +11,7 @@ class ProfessionalExperienceElement extends Component {
         </div>
         <div className="professional-experience divider"></div>
         {professionalExperience.map((experience) => (
-          <div className="professional-experience element">
+          <div className="professional-experience element" key={experience.id}>
             <div className="professional-experience dates">
               {experience.startDate} - {experience.endDate}
             </div>

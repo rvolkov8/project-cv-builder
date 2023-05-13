@@ -17,7 +17,7 @@ class MainInfoForm extends Component {
     const { jobTitle, firstName, lastName, email, phoneNumber } = personInfo;
     return (
       <div className="main-info-form-container">
-        <form className="main-info-form" novalidate>
+        <form className="main-info-form" noValidate>
           <div className="job-title">
             <label htmlFor="job-title">Desired Job Title</label>
             <input
@@ -32,7 +32,7 @@ class MainInfoForm extends Component {
           <div className="picture">
             <label>Picture</label>
             <input onChange={handlePictureChange} type="file" id="picture" />
-            <label for="picture">
+            <label htmlFor="picture">
               {picture.url !== null ? picture.name : 'Choose a file'}
             </label>
           </div>

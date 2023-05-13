@@ -7,7 +7,12 @@ class EditEducationSection extends Component {
     const educationElements = Array.from(
       { length: education.length },
       (_, index) => (
-        <EditEducationElement key={index} index={index} {...this.props} />
+        <EditEducationElement
+          key={education[index].id}
+          id={education[index].id}
+          index={index}
+          {...this.props}
+        />
       )
     );
     return (

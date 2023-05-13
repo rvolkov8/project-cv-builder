@@ -8,7 +8,8 @@ class EditEmploymentHistorySection extends Component {
       { length: professionalExperience.length },
       (_, index) => (
         <EditEmploymentHistoryElement
-          key={index}
+          key={professionalExperience[index].id}
+          id={professionalExperience[index].id}
           index={index}
           {...this.props}
         />
