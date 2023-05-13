@@ -1,10 +1,18 @@
-.github-container {
+.github-container > a {
   display: flex;
   align-items: center;
   gap: 5px;
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+}
+
 .nickname {
   color: var(--gray-font);
+}
+
+.nickname:hover {
+  color: var(--white);
 }
